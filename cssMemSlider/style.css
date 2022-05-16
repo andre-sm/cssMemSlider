@@ -37,7 +37,6 @@ body {
   align-items: center;
   justify-content: center;
   max-width: 51.75rem;
-  max-height: 90vh;
   padding: 2.6rem 2rem 0 2rem;
   border-radius: 1.5rem;
   background-color: var(--white-color);
@@ -65,12 +64,19 @@ body {
 .slide {
   display: flex;
   padding: 0 2rem;
+  max-height: 60vh;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .slide img {
   max-width: 100%;
   max-height: 100%;
   border-radius: 1.2rem;
+  object-fit: contain;
 }
 
 .checkbox-one:checked ~ .slider .slider__container {
@@ -174,6 +180,14 @@ body {
 .checkbox-three:checked ~ .controls .control-three:hover > .control__btn,
 .checkbox-four:checked ~ .controls .control-four:hover > .control__btn {
   opacity: 0.6;
+}
+
+.checkbox-one:checked ~ .controls .control-one:active > .control__btn,
+.checkbox-two:checked ~ .controls .control-two:active > .control__btn,
+.checkbox-three:checked ~ .controls .control-three:active > .control__btn,
+.checkbox-four:checked ~ .controls .control-four:active > .control__btn {
+  opacity: 0.8;
+  background-color: #ffa627;
 }
 
 @media screen and (max-width: 767px) {
