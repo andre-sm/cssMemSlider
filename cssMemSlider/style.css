@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root{
+  --black-color: #1a1a1a;
+  --white-color: #FFFFFF;
+  --primary-color: #f0f0f0;
+  --secondary-color: #55D8C6;
+}
+
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--black-color);
+  background-color: var(--primary-color);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 51.75rem;
+  padding: 2.6rem 2rem 0 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--white-color);
+  box-shadow: rgba(0, 0, 0, 0.15) 0rem 0.1rem 0.2rem;
+}
+
+.checkbox {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.slider {
+  overflow: hidden;
+  border-radius: 1.2rem;
+}
+
+.slider__container {
+  display: flex;
+  align-items: center;
+  width: 400%;
+  transition: all .75s;
+}
+
+.slide {
+  display: flex;
+  padding: 0 2rem;
+  max-height: 60vh;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 1.2rem;
+  object-fit: contain;
+}
+
+.checkbox-one:checked ~ .slider .slider__container {
+  transform: translateX(0);
+}
+
+.checkbox-two:checked ~ .slider .slider__container {
+  transform: translateX(-25%);
+}
+
+.checkbox-three:checked ~ .slider .slider__container {
+  transform: translateX(-50%);
+}
+
+.checkbox-four:checked ~ .slider .slider__container {
+  transform: translateX(-75%);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.2rem 0;
+}
+
+.title__container {
+  overflow: hidden;
+  padding-left: 2rem;
+}
+
+.title__slider {
+  width: 400%;
+  display: flex;
+  transition: all .75s;
+}
+
+.title {
+  text-align: left;
+  font-size: 1.5em;
+  width: 100%;
+}
+
+.checkbox-one:checked ~ .controls .title__slider {
+  transform: translateX(0%);
+}
+
+.checkbox-two:checked ~ .controls .title__slider {
+  transform: translateX(-25%);
+}
+
+.checkbox-three:checked ~ .controls .title__slider {
+  transform: translateX(-50%);
+}
+
+.checkbox-four:checked ~ .controls .title__slider {
+  transform: translateX(-75%);
+}
+
+.controls__container {
+  display: flex;
+  gap: 0.25rem;
+  margin-right: 2rem;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.6rem;
+  height: 3rem;
+}
+
+.control__btn {
+  background-color: var(--white-color);
+  width: 1.36rem;
+  height: 1.36rem;
+  border-radius: 80%;
+  border: 0.14rem solid var(--secondary-color);
+  transition: all .2s linear;
+}
+
+.control:hover > .control__btn {
+  border: 0.32rem solid var(--secondary-color);
+}
+
+.control:active > .control__btn {
+  border: 0.5rem solid var(--secondary-color);
+  opacity: 0.6;
+}
+
+.checkbox-one:checked ~ .controls .control-one .control__btn,
+.checkbox-two:checked ~ .controls .control-two .control__btn,
+.checkbox-three:checked ~ .controls .control-three .control__btn,
+.checkbox-four:checked ~ .controls .control-four .control__btn {
+  background-color: var(--secondary-color);
+}
+
+.checkbox-one:checked ~ .controls .control-one:hover > .control__btn,
+.checkbox-two:checked ~ .controls .control-two:hover > .control__btn,
+.checkbox-three:checked ~ .controls .control-three:hover > .control__btn,
+.checkbox-four:checked ~ .controls .control-four:hover > .control__btn {
+  opacity: 0.6;
+}
+
+.checkbox-one:checked ~ .controls .control-one:active > .control__btn,
+.checkbox-two:checked ~ .controls .control-two:active > .control__btn,
+.checkbox-three:checked ~ .controls .control-three:active > .control__btn,
+.checkbox-four:checked ~ .controls .control-four:active > .control__btn {
+  opacity: 0.8;
+  background-color: #ffa627;
+}
+
+@media screen and (max-width: 767px) {
+
+  .container {
+    border-radius: 1rem;
+  }
+
+  .slide {
+    padding: 0 0.8rem;
+  }
+
+  .controls { 
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .title__container {
+    order: 2;
+    padding-left: 0.8rem;
+  }
+
+  .controls__container {
+    order: 1;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .container {
+    border-radius: 0.4rem;
+    padding: 1.6rem 0.6rem 0 0.6rem;
+  }
+
+  .slider {
+    border-radius: 0.6rem;
+  }
+
+  .slide img {
+    border-radius: 0.6rem;
+  }
+
+  .title {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  
+  .title {
+    font-size: 1.14em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  
+  .title {
+    font-size: 1em;
+  }
+}
